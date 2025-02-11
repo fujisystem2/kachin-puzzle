@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>カッチンパズル JavaScript移植版</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="img/home.png" />
+<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/key.js"></script>
+<!-- <script src="JSMML/JSMML.js"></script> -->
+<script src="js/uni.min.js"></script>
+<script src="js/kachinMain.min.js"></script>
+<link href="css/kachin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+	<div id="title">
+		<svg viewBox="0 0 154 75" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<path d="m 112.66424,68.645193 -11.27591,-13.445349 15.51969,8.180494 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 19.699845,4.0426358 4.4685938,31.2801 11.892393,0.9683242 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 34.639956,20.699928 13.921655,41.468604 24.321883,14.035419 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 1.3995739,6.1935642 28.028505,15.546098 0.01851987,19.006679 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 67.097487,7.3735636 40.537271,15.517001 63.586642,0.0105828 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 39.473858,17.207597 32.510306,3.047859 -32.510306,3.04783 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 59.623396,12.516781 51.837167,45.654242 53.159942,11.638421 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 33.042013,34.645318 33.748416,45.46092 29.650267,35.425944 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 37.539789,33.322542 38.246191,44.138144 34.148042,34.102887 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 147.99508,56.199758 128.91431,72.820107 143.22213,51.94554 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 77.143187,10.469005 84.360738,24.761077 72.724998,13.762905 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 77.868216,33.18764 107.28311,19.18129 81.238796,38.759553 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 64.700573,43.029576 51.948362,74.590204 58.445964,41.175093 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 71.735527,41.122036 76.921078,74.76744 65.414878,42.72788 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 75.587578,38.830956 0.70358,11.535268 -4.412827,-10.6807 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 73.547676,48.527264 8.511257,-6.468533 -6.066649,8.802229 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 81.437198,42.862782 -8.5217,-3.026551 9.03224,0.463127 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 88.450984,40.108858 23.959256,2.878384 -23.959256,2.878667 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 85.048513,67.412447 112.21974,43.209633 90.937927,72.724998 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 114.04007,34.182473 1.524,10.016631 -5.11161,-8.746913 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 111.48963,35.187749 1.52908,10.021993 -5.11669,-8.751993 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 129.97773,42.479242 117.29946,74.063578 123.8662,40.669633 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="m 135.33261,42.108967 -6.93166,30.980944 2.50275,-31.647835 z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+			<path d="M 46.521793,35.550122 36.798956,55.130982 41.96334,33.88614 Z" style="fill:#ffc000;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+		</svg>
+	</div>
+	<br/>
+	<ul id="charcter">
+		<li>
+			<svg id="pampuuNeko" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc>パンプネコ<br/>　　　カッチン玉を出口まで運ぶのが仕事のネコ。</desc>
+				<path fill="#ffffff" d="M6,0h3v3h6v-3h3v3h3v3h3v6h-3v3h3v3h-3v-3h-3v6h6v3h-9v-3h-6v3h-9v-3h6v-6h-3v3h-3v-3h3v-3h-3v-6h3v-3h3zM7,9h-1v3h3v-3zM16,9h-1v3h3v-3h-2z" />
+			</svg>
+		</li>
+		<li>
+			<svg id="katchinDama" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc>カッチン玉<br/>　　　鎖で繋がれている玉。</desc>
+				<path fill="#db49b6" d="M6,0h9v3h3v3h3v9h-3v3h-3v3h-9v-3h-3v-3h-3v-9h3v-3h3zM7,3h-1v3h3v-3zM4,6h-1v3h3v-3h-2z" />
+			</svg>
+		</li>
+		<li>
+			<svg id="kabe" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc>壁<br/>　　　通れません。</desc>
+				<path fill="#2424ff" d="M0,0h22v24h-22v-24z" />
+			</svg>
+		</li>
+		<li>
+			<svg id="jyaMarble" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc >ジャマーブル<br/>　　　お邪魔ボール。鎖の上は通れない。</desc>
+				<path fill="#6dff6d" d="M6,0h9v3h3v3h3v9h-3v3h-3v3h-9v-3h-3v-3h-3v-9h3v-3h3zM7,3h-1v3h3v-3zM4,6h-1v3h3v-3h-2z" />
+			</svg>
+		</li>
+		<li>
+			<svg id="kusari" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc >鎖<br/>　　　３キャラ分まで伸びる。</desc>
+				<path fill="#ffffff" d="M9,6h3v3h3v3h-3v3h-3v-3h-3v-3h3zM10,9h-1v3h3v-3h-2z" />
+			</svg>
+		</li>
+		<li>
+			<svg id="deguchi" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+				<desc >出口<br/>　　　カッチン玉を入れる所。</desc>
+				<path fill="#ffffff" d="M0,0h21v21h-21zM4,3h-1v15h15v-15h-14z" />
+			</svg>
+		</li>
+	</ul>
+	<div id="HideCharcter">
+		<svg id="blank" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<desc >空白 - dummy</desc>
+		</svg>
+		<svg id="kabe2" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<desc>壁2 - 通れません。</desc>
+			<path fill="#2020ff" d="m -0.00745305,-0.01641274 c 7.99999995,0 15.99999905,0 23.99999905,0 0,1.10344894 0,2.20689694 0,3.31034594 -1.103446,0 -2.206891,0 -3.310337,0 0,1.103448 0,2.206896 0,3.310344 1.103446,0 2.206891,0 3.310337,0 0,0.827586 0,1.655172 0,2.482758 -1.103446,0 -2.206891,0 -3.310337,0 0,1.1034478 0,2.2068958 0,3.3103438 1.103446,0 2.206891,0 3.310337,0 0,0.827586 0,1.655173 0,2.482759 -1.103446,0 -2.206891,0 -3.310337,0 0,1.103448 0,2.206896 0,3.310345 1.103446,0 2.206891,0 3.310337,0 0,1.931034 0,3.862069 0,5.793104 -8,0 -15.9999991,0 -23.99999905,0 0,-8 0,-15.9999998 0,-23.99999974 z M 3.3028849,3.2939332 c -0.36724,0.04438 -1.025099,-0.201858 -0.827567,0.407294 0,0.967683 0,1.935366 0,2.90305 1.103445,0 2.206889,0 3.310334,0 0,-1.103448 0,-2.206896 0,-3.310344 -0.827589,0 -1.655178,0 -2.482767,0 z m 3.310348,3.310344 c -0.367244,0.04438 -1.02511,-0.20186 -0.827581,0.407293 0,0.691822 0,1.383643 0,2.075465 1.103448,0 2.206897,0 3.310345,0 0,-0.827586 0,-1.655172 0,-2.482758 -0.827588,0 -1.655176,0 -2.482764,0 z m 12.4137931,0 c -0.367244,0.04438 -1.025113,-0.201861 -0.827585,0.407293 0,0.691822 0,1.383643 0,2.075465 0.827589,0 1.655179,0 2.482768,0 0,-0.827586 0,-1.655172 0,-2.482758 -0.551728,0 -1.103455,0 -1.655183,0 z M 3.3028839,9.0870352 c -0.36724,0.04438 -1.025098,-0.201858 -0.827566,0.407294 0,0.9676828 0,1.9353658 0,2.9030498 1.103445,0 2.206889,0 3.310334,0 0,-1.103448 0,-2.206896 0,-3.3103438 -0.827589,0 -1.655179,0 -2.482768,0 z m 6.6206957,0 c -0.3672437,0.04438 -1.0251107,-0.20186 -0.8275827,0.407294 0,0.9676828 0,1.9353658 0,2.9030498 0.8275877,0 1.6551771,0 2.4827651,0 0,-1.103448 0,-2.206896 0,-3.3103438 -0.551727,0 -1.103455,0 -1.6551824,0 z m 5.7930944,0 c -0.367243,0.04438 -1.025107,-0.20186 -0.827578,0.407294 0,0.9676828 0,1.9353658 0,2.9030498 1.103448,0 2.206897,0 3.310345,0 0,-1.103448 0,-2.206896 0,-3.3103438 -0.827589,0 -1.655178,0 -2.482767,0 z M 6.6132329,12.397379 c -0.367244,0.04438 -1.02511,-0.20186 -0.827581,0.407294 0,0.691821 0,1.383643 0,2.075465 1.103448,0 2.206897,0 3.310345,0 0,-0.827586 0,-1.655173 0,-2.482759 -0.827588,0 -1.655176,0 -2.482764,0 z m 5.7930971,0 c -0.367241,0.04438 -1.025099,-0.201858 -0.827568,0.407294 0,0.691821 0,1.383643 0,2.075465 -0.827588,0 -1.6551774,0 -2.4827651,0 0,1.103448 0,2.206896 0,3.310345 -1.103448,0 -2.206897,0 -3.310345,0 0,1.103449 0,2.206898 0,3.310348 4.9655191,0 9.9310371,0 14.8965561,0 0,-1.10345 0,-2.206899 0,-3.310348 -0.827589,0 -1.655178,0 -2.482767,0 0,-1.103449 0,-2.206897 0,-3.310345 -1.103448,0 -2.206897,0 -3.310345,0 0,-0.827586 0,-1.655173 0,-2.482759 -0.827589,0 -1.655177,0 -2.482766,0 z m 6.620696,0 c -0.367244,0.04438 -1.025113,-0.20186 -0.827585,0.407294 0,0.691821 0,1.383643 0,2.075465 0.827589,0 1.655178,0 2.482767,0 0,-0.827586 0,-1.655173 0,-2.482759 -0.551727,0 -1.103455,0 -1.655182,0 z M 3.3028839,14.880138 c -0.36724,0.04438 -1.025098,-0.201858 -0.827566,0.407293 0,0.967684 0,1.935368 0,2.903052 1.103445,0 2.206889,0 3.310334,0 0,-1.103449 0,-2.206897 0,-3.310345 -0.827589,0 -1.655179,0 -2.482768,0 z" />
+		</svg>
+		<svg id="MSX_M" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<text x="5" y="20" font-size="18" fill="#ffffff">M</text>
+		</svg>
+		<svg id="MSX_S" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<text x="5" y="20" font-size="18" fill="#ffffff">S</text>
+		</svg>
+		<svg id="MSX_X" width="24px" height="24px" viewBox="0 0 24 24" preserveAspectRatio="none" buffered-rendering="static" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges" >
+			<text x="5" y="20" font-size="18" fill="#ffffff">X</text>
+		</svg>
+	</div>
+	<br/>
+	<ul id="displayRound"></ul>
+	<div id="info"></div>
+	<div id="messages" class="rainbow"></div>
+	<ul id="footer">
+		<li><div class="rainbow"><span>PUSH SPACE KEY! (OR LONGTAP)</span></div></li><br/>
+		<li class="right">
+			<div class="rainbow">CREATED BY Hiroshi 1986</div>
+		</li>
+		<li class="right">
+			<div class="rainbow">PORTED TO JavaScript BY FujiSystem 2014</div>
+		</li>
+	</ul>
+</div>
+<div id="touchPad" class="box"></div>
+</body>
+</html>

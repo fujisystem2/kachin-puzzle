@@ -1,0 +1,160 @@
+[
+	{
+		"DESC":"ROUND1",
+		"map": [
+			"__HHHHH____",
+			"_HH___HHHH_",
+			"_H__G_G_OH_",
+			"_H_RxR__HH_",
+			"_HHH____H__",
+			"___HHHHHH__"
+			],
+		"chainLength":1,
+		"initX":2,
+		"initY":2
+	},
+	{
+		"DESC":"ROUND2",
+		"map": [
+			"______HHHH_",
+			"HHHHHHH__H_",
+			"H__ORxxR_H_",
+			"H_GHHHH__HH",
+			"H______G__H",
+			"HH______HHH",
+			"_HHHHHHHH__"
+			],
+		"chainLength":2,
+		"initX":7,
+		"initY":1
+	},
+	{
+		"DESC":"ROUND3",
+		"map": [
+			"HHHHHHHHHH_",
+			"H________HH",
+			"H__G_G_G__H",
+			"H__HHR__G_H",
+			"HGGGOR__HHH",
+			"H__H_HG_H__",
+			"H__HHH__H__",
+			"HHHH_HHHH__"
+			],
+		"chainLength":0,
+		"initX":4,
+		"initY":5
+	},
+	{
+		"DESC":"ROUND4",
+		"map": [
+			"HHHH__HHHH_",
+			"HO_HHHH__HH",
+			"H__RxxxR__H",
+			"H__GGGG___H",
+			"HH____G_HHH",
+			"_HHHHHHHH__"
+			],
+		"chainLength":3,
+		"initX":2,
+		"initY":1
+	},
+	{
+		"DESC":"ROUND5",
+		"map": [
+			"_HHHHH__HHH",
+			"HH___HHHH_H",
+			"H__G_Rx_G_H",
+			"H__GH_R_G_H",
+			"H__G_G_H__H",
+			"HH_G___O_HH",
+			"_HHHHH___H_",
+			"_____HHHHH_"
+			],
+		"chainLength":1,
+		"initX":2,
+		"initY":5
+	},
+	{
+		"DESC":"ROUND6",
+		"map": [
+			"___EEEEE___",
+			"_EEE___E___",
+			"_E__G_REEEE",
+			"EE_GGGxG__E",
+			"EO__G_R_G_E",
+			"EEEE____EEE",
+			"___EEEEEE__"
+			],
+		"chainLength":1,
+		"initX":6,
+		"initY":1
+	},
+	{
+		"DESC":"ROUND7",
+		"map": [
+			"___HHHHH___",
+			"__HH_G_HH__",
+			"__H__G__H__",
+			"__RxRGGOG__",
+			"__H__G__H__",
+			"__HH_G_HH__",
+			"___HHHHH___",
+			"___________"
+			],
+		"chainLength":1,
+		"initX":3,
+		"initY":3
+	},
+	{
+		"DESC":"ROUND8",
+		"map": [
+			"__GGGGGGG__",
+			"_GG_____GG_",
+			"_G__G_R__G_",
+			"_G_R___G_G_",
+			"_GG_____GG_",
+			"__GxxxxxG__",
+			"___OOOOO___",
+			"___OOOOO___"
+			],
+		"chainLength":2,
+		"initX":5,
+		"initY":4
+	},
+	{
+		"DESC":"ROUND9",
+		"map": [
+			"EEEEEEEEEEE",
+			"EG___G___GE",
+			"E_G__G__GOE",
+			"E__EEEEE_RE",
+			"EGGEMSXE_xE",
+			"E__EEEEE_RE",
+			"E_G__G__G_E",
+			"EG___G___GE",
+			"EEEEEEEEEEE"
+			],
+		"chainLength":1,
+		"initX":8,
+		"initY":1
+	},
+	{
+		"DESC":"ROUND10",
+		"map": [
+			"____GGG____",
+			"GGGGG_GGGGG",
+			"_x _G_G__x_",
+			"_x _GRG  x_",
+			"x_xG_xG x_x",
+			"x_xG_xG x_x",
+			"H_HGGxG H_H",
+			"HGHG_RG HGH",
+			"__ G__GG __",
+			"__ GO__G___",
+			"___GGGGG___"
+			],
+		"chainLength":3,
+		"initX":5,
+		"initY":1
+	}
+]
