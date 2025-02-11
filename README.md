@@ -1,3 +1,4 @@
+<a src="https://fujisystem2.github.io/kachin-puzzle/">game</a>
 <img src="Kachin Puzzle.png"/>
 
 遊び方\
