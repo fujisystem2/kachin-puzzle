@@ -1,4 +1,4 @@
-[game](https://fujisystem2.github.io/kachin-puzzle/)
+[demo](https://fujisystem2.github.io/kachin-puzzle/)
 
 <img src="Kachin Puzzle.png"/>
 
